@@ -1,2 +1,2 @@
 # modelui-target-msr-reactnative
-React Native
+React Native app
