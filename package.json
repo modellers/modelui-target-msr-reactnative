@@ -9,13 +9,16 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@eva-design/eva": "^2.1.1",
     "@expo/webpack-config": "^0.17.2",
+    "@ui-kitten/components": "^5.1.2",
     "expo": "~47.0.9",
     "expo-status-bar": "~1.4.2",
     "modelui-core-runtime": "git+https://github.com/modellers/modelui-core-runtime",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.5",
+    "react-native-svg": "^13.7.0",
     "react-native-web": "~0.18.9"
   },
   "devDependencies": {

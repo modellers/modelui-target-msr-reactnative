@@ -1,6 +1,6 @@
 // https://material-ui.com/api/typography/
 import React from 'react';
-import { Text } from 'react-native';
+import { Text } from '../../theme/components';
 import { structs } from 'modelui-core-runtime';
 
 export const events = structs.ListBase.events;
@@ -85,9 +85,6 @@ export const config = {
   state: structs.ListBase.StateList
 }
 
-const style = theme => ({
-});
-
 class TextComponent extends structs.ListBase.ListBase {
 
   constructor(props) {
@@ -109,16 +106,16 @@ class TextComponent extends structs.ListBase.ListBase {
     */
 
     this.configs = {
-      heading: { variant: 'h1', component: 'h1' },
-      section: { variant: 'h2', component: 'h2' },
-      part: { variant: 'h3', component: 'h3' },
-      chapter: { variant: 'h4', component: 'h4' },
-      title: { variant: 'h5', component: 'h5' },
-      subtitle: { variant: 'h6', component: 'h6' },
-      caption: { variant: 'subtitle', component: 'p' },
-      summary: { variant: 'subtitle2', component: 'p' },
-      description: { variant: 'body1', component: 'p' },
-      text: { variant: 'body2', component: 'p' }
+      heading: { category: 'h1' },
+      section: { category: 'h2' },
+      part: { category: 'h3' },
+      chapter: { category: 'h4' },
+      title: { category: 'h5' },
+      subtitle: { category: 'h6' },
+      caption: { category: 's1' },
+      summary: { category: 's2' },
+      description: { category: 'c1' },
+      text: { category: 'c2' }
     }
   }
 
@@ -132,7 +129,7 @@ class TextComponent extends structs.ListBase.ListBase {
         {this.state.data.map((itm, idx) => {
           const config = this.configs[itm.typography || 'text'];
           return (
-            <Text key={this.props.id + idx} style={{ fontSize: 16 }}>
+            <Text key={this.props.id + idx} category={config.category} >
               {this.getText(itm)}
             </Text>
           )
@@ -144,22 +141,3 @@ class TextComponent extends structs.ListBase.ListBase {
 }
 
 export default TextComponent;
-/*
-const input_schema = {
-  "$id": "https://example.com/address.schema.json",
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Text Component",
-  "type": "object",
-  "properties": {
-    "id": {
-      "type": "string"
-    },
-    "typography": {
-      "type": "string" // one of
-    },
-    "text": {
-      "type": "string"
-    }
-  }
-}
-*/

@@ -2,6 +2,7 @@ import React from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import { layout, registerCoreComponents } from 'modelui-core-runtime';
 import { Layout } from './components/Grid/Grid';
+import { ApplicationWrapper } from './theme/components'
 
 // components
 import registerComponents from './components/Components';
@@ -105,9 +106,9 @@ class AppBase extends React.Component {
 
   render() {
     return (
-      <ScrollView>
+      <ApplicationWrapper>
         {this.renderBody()}
-      </ScrollView>
+      </ApplicationWrapper>
     );
   }
 }
