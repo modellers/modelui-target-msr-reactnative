@@ -6,7 +6,7 @@ import { ScrollView } from 'react-native';
 import AppBase from './AppBase';
 
 
-class NativeApp extends AppBase {
+class App extends AppBase {
 
   state = {
     modal: [],
@@ -81,7 +81,7 @@ class NativeApp extends AppBase {
 }
 
 
-export default NativeApp;
+export default App;
 
 
 

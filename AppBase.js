@@ -1,6 +1,7 @@
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
-import { layout, registerCoreComponents, Layout as CoreLayout } from 'modelui-core-runtime';
+import { ScrollView, View, Text } from 'react-native';
+import { layout, registerCoreComponents } from 'modelui-core-runtime';
+import { Layout } from './components/Grid/Grid';
 
 // components
 import registerComponents from './components/Components';
@@ -86,9 +87,8 @@ class AppBase extends React.Component {
 
     if (is_ready) {
       return (
-        <div>
-
-          <CoreLayout
+        <View>
+          <Layout
             id="document_root"
             schema={{}}
             config={{
@@ -96,12 +96,7 @@ class AppBase extends React.Component {
             data={this.state.view}
             manager={manager}
           />
-          {
-            this.state.modal.map((itm, idx) => (
-              <div></div>
-
-            ))
-          }</div>)
+        </View>)
     } else {
       return (<Text style={{ fontSize: 46 }}>Error loading app</Text>)
     }

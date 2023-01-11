@@ -1,11 +1,10 @@
 import React from 'react';
 import { Image, ScrollView, Text } from 'react-native';
-import NativeApp from './AppDev';
+import NativeApp from './AppTest';
 
-const App = () => (
-  <NativeApp />
-);
-
+const App = () => {
+  return (<NativeApp />)
+};
 
 /*
 const logo = {
@@ -50,4 +49,5 @@ const App = () => (
   </ScrollView>
 );
 */
+
 export default App;

@@ -3,6 +3,7 @@
 import { layout } from 'modelui-core-runtime';
 
 // Components
+import { registerText } from './Text/Text';
 // import { register as registerAvatar } from './Avatar/Avatar';
 
 export default function registerComponents(component_manager) {
@@ -17,5 +18,6 @@ export default function registerComponents(component_manager) {
     */
 
     // registerAvatar(component_manager);
+    registerText(component_manager);
 
 }
