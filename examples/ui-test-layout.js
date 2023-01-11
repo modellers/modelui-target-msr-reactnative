@@ -70,19 +70,23 @@ const tabs = {
   data: [{
     'id': 'id1',
     'title': 'Title 1',
+    'icon': 'font-awesome:person',
     'content': 'Some text here 1'
   }, {
     'id': 'id2',
     'title': 'Title 2',
+    'icon': 'material-ui:person',
     'content': 'Some text here 2'
   }, {
     'id': 'select_value',
     'title': 'Title 3',
+    'icon': 'font-awesome:person',
     'content': 'Some text here 3',
     'disabled': true
   }, {
     'id': 'delete_value',
     'title': 'Title 4',
+    'icon': 'font-awesome:person',
     'content': text_rows
   }],
   id: 'f92ec0aa31e145679d3a7d81a862c5b055f88946',

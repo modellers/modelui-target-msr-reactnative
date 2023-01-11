@@ -8,7 +8,7 @@ import { Text } from '../../theme/components';
 import { Tab } from '../../theme/components';
 import { TabView } from '../../theme/components';
 import { Layout } from '../../theme/components';
-// import getIcon from '../../util/IconUtil';
+import getIcon from '../../util/IconUtil';
 // state
 import { layout } from 'modelui-core-runtime';
 
@@ -165,11 +165,13 @@ class TabsComponent extends layout.LayoutBase.LayoutBase {
             renderedContent = <Text>{renderedContent}</Text>
           }
           let tabIcon = null;
+          /* // FIXME: look up icon
           if (itm.icon) {
-            tabIcon = null; // FIXME: look up icon
+            tabIcon = getIcon(itm.icon); 
           }
+          */
           return (
-            <Tab title={itm.title} icon={null} key={`${this.props.id}-tabpanel-${idx}`}  >
+            <Tab title={itm.title} icon={tabIcon} key={`${this.props.id}-tabpanel-${idx}`}  >
               <Layout style={this.styles.tabContainer}>
                 {renderedContent}
               </Layout>
