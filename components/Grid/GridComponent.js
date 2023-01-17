@@ -103,6 +103,8 @@ export class GridComponent extends layout.LayoutBase.LayoutBase {
 
   render() {
     const { classes } = this.props;
+
+    // https://reactnative.dev/docs/flexbox
     const justifyContentMap = {
       'left': 'flex-start',
       'right': 'flex-end',
