@@ -4,7 +4,7 @@ import { layout } from 'modelui-core-runtime';
 
 // Components
 import { registerText } from './Text/Text';
-import { registerTabs } from './Grid/Grid';
+import { registerTabs, registerGridRow, registerGridColumn, registerContainer } from './Grid/Grid';
 
 export default function registerComponents(component_manager) {
 
@@ -20,5 +20,8 @@ export default function registerComponents(component_manager) {
     // registerAvatar(component_manager);
     registerText(component_manager);
     registerTabs(component_manager);
+    registerGridRow(component_manager);
+    registerGridColumn(component_manager);
+    registerContainer(component_manager);
 
 }

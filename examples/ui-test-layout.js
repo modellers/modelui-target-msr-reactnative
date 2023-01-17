@@ -71,7 +71,7 @@ const tabs = {
     'id': 'id1',
     'title': 'Title 1',
     'icon': 'font-awesome:person',
-    'content': 'Some text here 1'
+    'content': "text_rows"
   }, {
     'id': 'id2',
     'title': 'Title 2',
@@ -87,7 +87,7 @@ const tabs = {
     'id': 'delete_value',
     'title': 'Title 4',
     'icon': 'font-awesome:person',
-    'content': text_rows
+    'data': 'Some text here 3',
   }],
   id: 'f92ec0aa31e145679d3a7d81a862c5b055f88946',
   schema: {},
@@ -98,11 +98,43 @@ const tabs = {
   }
 }
 
+
+const grid_rows = {
+  data: [{
+    'id': 'id1',
+    'title': 'Title 1',
+    'content': text_rows
+  }, {
+    'id': 'id2',
+    'title': 'Title 2',
+    'content': 'Some text here 2'
+  }, {
+    'id': 'select_value',
+    'title': 'Title 3',
+    'content': 'Some text here 3',
+    'disabled': true
+  }, {
+    'id': 'delete_value',
+    'title': 'Title 4',
+    'data': 'Some text here 3',
+  }],
+  id: 'asdfs54sfasdfasdfasdf43dfasdgf',
+  schema: {},
+  type: 'grid-columns',
+  config: {
+    options: {
+      justifyContent: 'center',
+      alignContent: 'right'
+    }
+  }
+}
+
+
 ///////////////////////////////////////////////// show friends list - ends
 
 export const layout = {
   'root': [
-    tabs
+    grid_rows
   ]
 };
 

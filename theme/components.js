@@ -94,7 +94,7 @@ import _MuiDialogTitle from '@mui/material/DialogTitle';
 */
 export const ApplicationWrapper = (props) => {
     return (
-        <ApplicationProvider {...eva} theme={eva.light}>
+        <ApplicationProvider {...eva} theme={eva.dark}>
             {props.children}
         </ApplicationProvider>
     )

@@ -1,12 +1,12 @@
 import React from 'react';
 /*
-import ContainerComponent, { events as eventsContainer, triggers as triggersContainer, config as configContainer } from './ContainerComponent'
-import TabsComponent, { events as eventsTabs, triggers as triggersTabs, config as configTabs } from './TabsComponent'
-import GridComponent, { events as eventsGrid, triggers as triggersGrid, config as configGrid } from './GridComponent'
-import GridRowComponent, { events as eventsGridRow, triggers as triggersGridRow, config as configGridRow } from './GridRowComponent'
-import GridColumnComponent, { events as eventsGridColumn, triggers as triggersGridColumn, config as configGridColumn } from './GridColumnComponent'
 import AccordionComponent, { events as eventsAccordion, triggers as triggersAccordion, config as configAccordion } from './AccordionComponent'
 */
+import ContainerComponent, { events as eventsContainer, triggers as triggersContainer, config as configContainer } from './ContainerComponent'
+import GridComponent, { events as eventsGrid, triggers as triggersGrid, config as configGrid } from './GridComponent'
+import GridColumnComponent, { events as eventsGridColumn, triggers as triggersGridColumn, config as configGridColumn } from './GridColumnComponent'
+import GridRowComponent, { events as eventsGridRow, triggers as triggersGridRow, config as configGridRow } from './GridRowComponent'
+import TabsComponent, { events as eventsTabs, triggers as triggersTabs, config as configTabs } from './TabsComponent'
 import LayoutComponent, { events as eventsLayout, triggers as triggersLayout, config as configLayout } from '../Layout/LayoutComponent'
 import ViewComponent, { events as eventsView, triggers as triggersView, config as configView } from '../Layout/ViewComponent'
 
@@ -19,7 +19,7 @@ export function Layout(props) {
     // lets enumerate schema to extract uiSchema and validation
     return (<LayoutComponent {...props} />);
 }
-/*
+
 export function Container(props) {
     // lets enumerate schema to extract uiSchema and validation
     return (<ContainerComponent {...props} />);
@@ -39,17 +39,17 @@ export function GridRow(props) {
     // lets enumerate schema to extract uiSchema and validation
     return (<GridRowComponent {...props} />);
 }
-
+/*
 export function Accordion(props) {
     // lets enumerate schema to extract uiSchema and validation
     return (<AccordionComponent {...props} />);
 }
-
+*/
 export function Tabs(props) {
     // lets enumerate schema to extract uiSchema and validation
     return (<TabsComponent {...props} />);
 }
-
+/*
 
 export function registerView(component_manager) {
     // self register component to layout manager
@@ -61,6 +61,18 @@ export function registerView(component_manager) {
         config: configView
     });
 }
+
+export function registerAccordion(component_manager) {
+    // self register component to layout manager
+    component_manager.registerComponent({
+        component: Accordion,
+        type: configAccordion.type,
+        events: eventsAccordion,
+        triggers: triggersAccordion,
+        config: configAccordion
+    });
+}
+*/
 
 export function registerContainer(component_manager) {
     // self register component to layout manager
@@ -84,17 +96,6 @@ export function registerGrid(component_manager) {
     });
 }
 
-export function registerGridColumn(component_manager) {
-    // self register component to layout manager
-    component_manager.registerComponent({
-        component: GridColumn,
-        type: configGridColumn.type,
-        events: eventsGridColumn,
-        triggers: triggersGridColumn,
-        config: configGridColumn
-    });
-}
-
 export function registerGridRow(component_manager) {
     // self register component to layout manager
     component_manager.registerComponent({
@@ -106,14 +107,14 @@ export function registerGridRow(component_manager) {
     });
 }
 
-export function registerAccordion(component_manager) {
+export function registerGridColumn(component_manager) {
     // self register component to layout manager
     component_manager.registerComponent({
-        component: Accordion,
-        type: configAccordion.type,
-        events: eventsAccordion,
-        triggers: triggersAccordion,
-        config: configAccordion
+        component: GridColumn,
+        type: configGridColumn.type,
+        events: eventsGridColumn,
+        triggers: triggersGridColumn,
+        config: configGridColumn
     });
 }
 
@@ -127,7 +128,7 @@ export function registerTabs(component_manager) {
         config: configTabs
     });
 }
-
+/*
 export function registerLayout(component_manager) {
     // self register component to layout manager
     component_manager.registerComponent({
