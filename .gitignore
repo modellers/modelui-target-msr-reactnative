@@ -2,3 +2,4 @@
 /.expo/
 yarn.lock
 __snapshots__/
+coverage
