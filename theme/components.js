@@ -18,12 +18,12 @@ import _CssBaseline from '@mui/material/CssBaseline';
 import _Avatar from '@mui/material/Avatar';
 import _AvatarGroup from '@mui/lab/AvatarGroup';
 import _Tooltip from '@mui/material/Tooltip';
+*/
 // Buttons
-import _Fab from '@mui/material/Fab';
-import _Button from '@mui/material/Button';
-import _ButtonGroup from '@mui/material/ButtonGroup';
-import _IconButton from '@mui/material/IconButton';
-import _Icon from '@mui/material/Icon';
+import { Button as _Button } from '@ui-kitten/components';
+import { ButtonGroup as _ButtonGroup } from '@ui-kitten/components';
+import { Icon as _Icon } from '@ui-kitten/components';
+/*
 // Card
 import _Card from '@mui/material/Card';
 import _CardHeader from '@mui/material/CardHeader';
@@ -43,10 +43,10 @@ import { View as _View } from '@ui-kitten/components';
 import { Layout as _Layout } from '@ui-kitten/components';
 import { Tab as _Tab } from '@ui-kitten/components';
 import { TabView as _TabView } from '@ui-kitten/components';
-/*
+
 // Image
-import _ImageList from '@mui/material/ImageList';
-import _ImageListItem from '@mui/material/ImageListItem';
+import { Image as _Image } from 'react-native';
+/*
 // Checkbox
 import _FormLabel from '@mui/material/FormLabel';
 import _FormControl from '@mui/material/FormControl';
@@ -110,12 +110,12 @@ export const CssBaseline = _CssBaseline
 export const Avatar = _Avatar
 export const AvatarGroup = _AvatarGroup
 export const Tooltip = _Tooltip
+*/
 // Button
-export const Fab = _Fab
 export const Button = _Button
 export const ButtonGroup = _ButtonGroup
-export const IconButton = _IconButton
 export const Icon = _Icon
+/*
 // Card
 export const Card = _Card
 export const CardHeader = _CardHeader
@@ -135,10 +135,9 @@ export const View = _View;
 export const Layout = _Layout;
 export const Tab = _Tab;
 export const TabView = _TabView;
-/*
 // Image
-export const ImageList = _ImageList
-export const ImageListItem = _ImageListItem
+export const Image = _Image
+/*
 // Checkbox
 export const FormLabel = _FormLabel
 export const FormControl = _FormControl

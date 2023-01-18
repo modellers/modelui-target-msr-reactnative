@@ -129,12 +129,61 @@ const grid_rows = {
   }
 }
 
+const images = {
+  id: 'ImageBasic_id',
+  type: 'images',
+  data: [{
+    'id': 'id0',
+    'url': 'https://material-ui.com/static/images/image-list/breakfast.jpg',
+    'title': 'Image 0',
+    'cols': 2,
+  }, {
+    'id': 'select_value',
+    'url': 'https://material-ui.com/static/images/image-list/burgers.jpg',
+    'title': 'Image 1',
+    'cols': 1,
+  }, {
+    'id': 'delete_value',
+    'url': 'https://material-ui.com/static/images/image-list/honey.jpg',
+    'title': 'Image 2',
+    'cols': 1,
+  }, {
+    'id': 'id3',
+    'url': 'https://material-ui.com/static/images/image-list/vegetables.jpg',
+    'title': 'Image 3',
+    'cols': 2,
+  }],
+  config: { options: {} },
+  schema: {}
+}
+
+const buttons = {
+  id: 'TextButtons_id',
+  type: 'buttons',
+  data: [{
+    'id': 'id1',
+    'title': 'title 1',
+    'icon': 'font-awesome:fa fa-gift'
+  }, {
+    'id': 'id2',
+    'disabled': true,
+    'title': 'title 2',
+  }, {
+    'id': 'select_value',
+    'title': 'select_value',
+  }, {
+    'id': 'delete_value',
+    'title': 'delete_value',
+  }],
+  config: { options: {} },
+  schema: {}
+}
 
 ///////////////////////////////////////////////// show friends list - ends
 
 export const layout = {
   'root': [
-    grid_rows
+    buttons
   ]
 };
 

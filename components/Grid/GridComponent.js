@@ -94,7 +94,7 @@ export class GridComponent extends layout.LayoutBase.LayoutBase {
       }
       //  item key={itm.id} xs={itm.gridXS || this.props.config.options.gridXS || 12} sm={itm.gridSM || this.props.config.options.gridSM || 12} style={{ textAlign: itm.justifyContent || 'inherit' }}
       return (
-        <View style={style}>
+        <View key={itm.id} style={style}>
           {this.renderContent(classes, itm)}
         </View >
       )
