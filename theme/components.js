@@ -23,13 +23,10 @@ import _Tooltip from '@mui/material/Tooltip';
 import { Button as _Button } from '@ui-kitten/components';
 import { ButtonGroup as _ButtonGroup } from '@ui-kitten/components';
 import { Icon as _Icon } from '@ui-kitten/components';
-/*
+
 // Card
-import _Card from '@mui/material/Card';
-import _CardHeader from '@mui/material/CardHeader';
-import _CardMedia from '@mui/material/CardMedia';
-import _CardActions from '@mui/material/CardActions';
-import _CardContent from '@mui/material/CardContent';
+import { Card as _Card } from '@ui-kitten/components';
+/*
 // Accordion
 import _Accordion from '@mui/material/Accordion';
 import _AccordionSummary from '@mui/material/AccordionSummary';
@@ -46,26 +43,17 @@ import { TabView as _TabView } from '@ui-kitten/components';
 
 // Image
 import { Image as _Image } from 'react-native';
-/*
 // Checkbox
-import _FormLabel from '@mui/material/FormLabel';
-import _FormControl from '@mui/material/FormControl';
-import _FormGroup from '@mui/material/FormGroup';
-import _FormControlLabel from '@mui/material/FormControlLabel';
-import _FormHelperText from '@mui/material/FormHelperText';
-import _Checkbox from '@mui/material/Checkbox';
-*/
-// Text
+import { CheckBox as _Checkbox } from '@ui-kitten/components';
+import { Toggle as _Toggle } from '@ui-kitten/components';
+// Text 
 import { Text as _Text } from '@ui-kitten/components';
-/*
-import _TextField from '@mui/material/TextField';
-import _Autocomplete from '@mui/lab/Autocomplete';
+import { Input as _TextField } from '@ui-kitten/components';
+import { Autocomplete as _Autocomplete, AutocompleteItem as _AutocompleteItem } from '@ui-kitten/components'
 // List
-import _List from '@mui/material/List';
-import _ListItem from '@mui/material/ListItem';
-import _ListItemText from '@mui/material/ListItemText';
-import _ListItemAvatar from '@mui/material/ListItemAvatar';
-import _ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction';
+import { List as _List } from '@ui-kitten/components';
+import { ListItem as _ListItem } from '@ui-kitten/components';
+/*
 // Table
 import { DataGrid as _DataGrid } from '@mui/x-data-grid';
 import _Table from '@mui/material/Table';
@@ -115,13 +103,10 @@ export const Tooltip = _Tooltip
 export const Button = _Button
 export const ButtonGroup = _ButtonGroup
 export const Icon = _Icon
-/*
+
 // Card
 export const Card = _Card
-export const CardHeader = _CardHeader
-export const CardMedia = _CardMedia
-export const CardActions = _CardActions
-export const CardContent = _CardContent
+/*
 // Accordion
 export const Accordion = _Accordion
 export const AccordionSummary = _AccordionSummary
@@ -137,26 +122,18 @@ export const Tab = _Tab;
 export const TabView = _TabView;
 // Image
 export const Image = _Image
-/*
 // Checkbox
-export const FormLabel = _FormLabel
-export const FormControl = _FormControl
-export const FormGroup = _FormGroup
-export const FormControlLabel = _FormControlLabel
-export const FormHelperText = _FormHelperText
 export const Checkbox = _Checkbox
+export const Toggle = _Toggle
 // Text
-*/
 export const Text = _Text
-/*
 export const TextField = _TextField
 export const Autocomplete = _Autocomplete
+export const AutocompleteItem = _AutocompleteItem
 // List
 export const List = _List
 export const ListItem = _ListItem
-export const ListItemText = _ListItemText
-export const ListItemAvatar = _ListItemAvatar
-export const ListItemSecondaryAction = _ListItemSecondaryAction
+/*
 // Table
 export const DataGrid = _DataGrid
 export const Table = _Table

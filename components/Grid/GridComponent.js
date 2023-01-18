@@ -1,6 +1,7 @@
 // https://material-ui.com/components/autocomplete/
 import React from 'react';
 // react native components
+import { Text } from '../../theme/components'
 import { View } from 'react-native';
 // styles
 // state
@@ -93,10 +94,14 @@ export class GridComponent extends layout.LayoutBase.LayoutBase {
       const style = {
       }
       //  item key={itm.id} xs={itm.gridXS || this.props.config.options.gridXS || 12} sm={itm.gridSM || this.props.config.options.gridSM || 12} style={{ textAlign: itm.justifyContent || 'inherit' }}
+      let content = this.renderContent(classes, itm);
+      if (typeof (content) === 'string') {
+        content = <Text>{content}</Text>
+      }
       return (
         <View key={itm.id} style={style}>
-          {this.renderContent(classes, itm)}
-        </View >
+          {content}
+        </View>
       )
     }
   }

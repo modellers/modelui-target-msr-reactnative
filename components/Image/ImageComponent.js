@@ -2,6 +2,7 @@
 import React from 'react';
 
 import { Image } from '../../theme/components';
+import { ScrollView } from 'react-native';
 
 import { structs } from 'modelui-core-runtime';
 
@@ -78,15 +79,20 @@ class ImageComponent extends structs.ListBase.ListBase {
   render() {
 
     return (
-      <div>
+      <ScrollView>
         {this.state.data.map((item) => {
           const style = {
             width: 200,
             height: 200 / item.cols,
           }
-          return <Image key={item.id} source={item.url} alt={item.title} style={style} />
+          return <Image
+            key={item.id}
+            resizeMode={'cover'}
+            source={{ uri: item.url }}
+            alt={item.title}
+            style={style} />
         })}
-      </div>
+      </ScrollView>
     );
   }
 }

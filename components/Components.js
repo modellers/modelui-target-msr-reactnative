@@ -7,6 +7,9 @@ import { registerText } from './Text/Text';
 import { registerTabs, registerGridRow, registerGridColumn, registerContainer } from './Grid/Grid';
 import { registerImage } from './Image/Image';
 import { registerButton } from './Button/Button';
+import { registerList, registerDropdown } from './List/List';
+import { registerCheckbox, registerTextfield } from './Input/Input';
+import { registerCard } from './Card/Card';
 
 export default function registerComponents(component_manager) {
 
@@ -27,5 +30,10 @@ export default function registerComponents(component_manager) {
     registerGridColumn(component_manager);
     registerContainer(component_manager);
     registerButton(component_manager);
+    registerList(component_manager);
+    registerDropdown(component_manager);
+    registerCheckbox(component_manager);
+    registerTextfield(component_manager);
+    registerCard(component_manager);
 
 }
