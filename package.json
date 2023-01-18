@@ -7,13 +7,18 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "jest"
+    "storybook": "start-storybook -p 7007",
+    "test": "jest",
+    "build-storybook": "build-storybook"
   },
   "jest": {
-    "preset": "jest-react-native",
-    "transform": {
-      "^.+\\.[t|j]sx?$": "babel-jest"
-    }
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?@react-native|react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base)"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/__mocks__/globalMock.js"
+    ]
   },
   "dependencies": {
     "@eva-design/eva": "^2.1.1",
@@ -30,7 +35,16 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@storybook/addon-actions": "^5.3",
+    "@storybook/addon-knobs": "^5.3",
+    "@storybook/addon-links": "^5.3",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.26",
+    "@storybook/cli": "^6.5.15",
+    "@storybook/react-native": "^5.3.27",
+    "@storybook/react-native-server": "^5.3.23",
     "babel-jest": "^29.3.1",
+    "babel-loader": "^8.3.0",
     "react-native-testing-library": "^6.0.0",
     "react-test-renderer": "^18.2.0"
   },
