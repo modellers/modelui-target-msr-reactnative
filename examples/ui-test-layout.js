@@ -307,7 +307,7 @@ const app = {
   }, {
     'id': 'id2',
     'title': 'Title 2',
-    'content': selections
+    'content': text_rows
   }],
   id: 'asdfs54sfasdfasdfasdf43dfasdgf',
   schema: {},
