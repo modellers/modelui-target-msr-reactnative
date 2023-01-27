@@ -1,6 +1,7 @@
 // https://material-ui.com/api/typography/
 import React from 'react';
 import { Text } from '../../theme/components';
+import { ScrollView } from 'react-native';
 import { structs } from 'modelui-core-runtime';
 
 export const events = structs.ListBase.events;
@@ -125,17 +126,19 @@ class TextComponent extends structs.ListBase.ListBase {
 
   render() {
     return (
-      <div>
+      <ScrollView>
         {this.state.data.map((itm, idx) => {
-          const config = this.configs[itm.typography || 'text'];
+          const typography = this.configs[itm.typography] || 'c2';
+          const text = this.getText(itm);
+          console.info(text)
           return (
-            <Text key={this.props.id + idx} category={config.category} >
-              {this.getText(itm)}
+            <Text key={itm.id} category={typography.category} style={{ color: 'black' }}>
+              {text}
             </Text>
           )
         })
         }
-      </div>
+      </ScrollView >
     )
   }
 }

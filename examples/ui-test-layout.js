@@ -38,15 +38,15 @@ export const editor_layout = {
 const text_rows = {
   data: [{
     'id': 'id0',
-    'typography': 'title',
+    'typography': 'heading',
     'text': 'Lorem ipsum dolor'
   }, {
     'id': 'id1',
-    'typography': 'text',
+    'typography': 'section',
     'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel.'
   }, {
     'id': 'select_value',
-    'typography': 'text',
+    'typography': 'chapter',
     'text': 'Sed eget orci tellus. Suspendisse turpis ligula, viverra nec elementum a, posuere id urna. Curabitur vitae felis sed neque venenatis rhoncus quis id nibh. Pellentesque vitae pretium nunc. Duis eu interdum nulla. Sed non cursus sem. Sed sit amet iaculis lacus. Nunc auctor lectus accumsan, hendrerit urna et, porta ipsum. Aenean urna arcu, pretium et eros nec, facilisis luctus dolor. Pellentesque porttitor enim ac arcu placerat iaculis. Sed lorem urna, volutpat at ultrices quis, aliquet quis est. Praesent mi libero, gravida fringilla augue in, laoreet luctus nisl. Phasellus in aliquam nulla. Phasellus eu neque laoreet, aliquet arcu vel, pellentesque orci. Nunc elit nisi, cursus ut odio at, eleifend accumsan ante. In sapien nisl, rhoncus ut massa ac, venenatis auctor risus.'
   }, {
     'id': 'delete_value',
@@ -129,12 +129,202 @@ const grid_rows = {
   }
 }
 
+const images = {
+  id: 'ImageBasic_id',
+  type: 'images',
+  data: [{
+    'id': 'id0',
+    'url': 'https://material-ui.com/static/images/image-list/breakfast.jpg',
+    'title': 'Image 0',
+    'cols': 2,
+  }, {
+    'id': 'select_value',
+    'url': 'https://material-ui.com/static/images/image-list/burgers.jpg',
+    'title': 'Image 1',
+    'cols': 1,
+  }, {
+    'id': 'delete_value',
+    'url': 'https://material-ui.com/static/images/image-list/honey.jpg',
+    'title': 'Image 2',
+    'cols': 1,
+  }, {
+    'id': 'id3',
+    'url': 'https://material-ui.com/static/images/image-list/vegetables.jpg',
+    'title': 'Image 3',
+    'cols': 2,
+  }],
+  config: { options: {} },
+  schema: {}
+}
+
+const buttons = {
+  id: 'TextButtons_id',
+  type: 'buttons',
+  data: [{
+    'id': 'id1',
+    'title': 'title 1',
+    'icon': 'font-awesome:fa fa-gift'
+  }, {
+    'id': 'id2',
+    'disabled': true,
+    'title': 'title 2',
+  }, {
+    'id': 'select_value',
+    'title': 'select_value',
+  }, {
+    'id': 'delete_value',
+    'title': 'delete_value',
+  }],
+  config: { options: {} },
+  schema: {}
+}
+
+const lists = {
+  id: 'BasicAvatar_id',
+  type: 'dropdown', //'list',
+  data: [{
+    'id': 'id1',
+    'title': 'Amira Mist',
+    'subtitle': 'Birthay is 29 of january',
+    'avatar': {
+      'id': 'id1avatars',
+      'config': { 'options': {} },
+      'data': [{
+        'id': 'id1',
+        'title': 'Profile picture of Amíra',
+        'image': 'https://mybluerobot.com/wp-content/plugins/svg-avatars-generator/data/custom-img/girl.png'
+      }]
+    }
+  }, {
+    'id': 'id2',
+    'title': 'Kjartan Akil',
+    'subtitle': 'Birthay is 20 of september',
+    'avatar': {
+      'id': 'id1avatars',
+      'config': { 'options': {} },
+      'data': [{
+        'id': 'id1',
+        'title': 'Profile picture of Akil',
+        'image': 'http://d24b33.medialib.edu.glogster.com/avatars/users/1/1/70/99/1709937.png?v=1297145784'
+      }]
+    }
+  }, {
+    'id': 'id3',
+    'title': 'Mom',
+    'subtitle': 'Birthay is 3 of feb',
+    'avatar': {
+      'id': 'id3avatars',
+      'config': { 'options': {} },
+      'data': [{
+        'id': 'id3',
+        'title': 'Profile picture of Mom',
+        'image': 'http://d24b33.medialib.edu.glogster.com/avatars/users/1/1/70/99/1709937.png?v=1297145784'
+      }]
+    }
+  }, {
+    'id': 'id4',
+    'title': 'Kjartan Akil',
+    'subtitle': 'Birthay is 20 of september',
+    'avatar': {
+      'id': 'id4avatars',
+      'config': { 'options': {} },
+      'data': [{
+        'id': 'id4',
+        'title': 'Profile picture of Akil',
+        'image': 'http://d24b33.medialib.edu.glogster.com/avatars/users/1/1/70/99/1709937.png?v=1297145784'
+      }]
+    }
+  }],
+  config: { options: { label: "Enter some data" } },
+  schema: {}
+}
+
+const selections = {
+  id: 'CheckboxIcon_id',
+  type: 'checkboxes',
+  data: [{
+    'id': 'id1',
+    'title': 'title 1',
+    'selected': true,
+  }, {
+    'id': 'id2',
+    'title': 'title 2',
+    'selected': false,
+  }, {
+    'id': 'select_value',
+    'title': 'select_value',
+    'selected': false
+  }, {
+    'id': 'delete_value',
+    'title': 'delete_value',
+    'selected': true,
+    'disabled': true
+  }],
+  config: { options: {} },
+  schema: {}
+}
+
+const textfield = {
+  id: 'TextfieldBasic_id',
+  type: 'textfield',
+  data: {
+    'value': 'John Doe'
+  },
+  config: { options: {} },
+  schema: {
+    type: 'object',
+    properties: {
+      value: { type: 'string' }
+    }
+  }
+}
+
+const cards = {
+  id: 'TitledCard_id',
+  type: 'cards',
+  data: [{
+    'id': 'id1',
+    'title': 'title 1',
+  }, {
+    'id': 'id2',
+    'title': 'title 2',
+  }, {
+    'id': 'select_value',
+    'title': 'select_value',
+  }, {
+    'id': 'delete_value',
+    'title': 'delete_value',
+  }],
+  config: { options: {} },
+  schema: {}
+}
+
+const app = {
+  data: [{
+    'id': 'id1',
+    'title': 'Title 1',
+    'content': cards
+  }, {
+    'id': 'id2',
+    'title': 'Title 2',
+    'content': text_rows
+  }],
+  id: 'asdfs54sfasdfasdfasdf43dfasdgf',
+  schema: {},
+  type: 'grid-rows',
+  config: {
+    options: {
+      justifyContent: 'center',
+      alignContent: 'right'
+    }
+  }
+}
 
 ///////////////////////////////////////////////// show friends list - ends
 
 export const layout = {
   'root': [
-    grid_rows
+    app
   ]
 };
 

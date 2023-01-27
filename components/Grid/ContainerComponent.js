@@ -74,13 +74,6 @@ class ContainerComponent extends layout.LayoutBase.LayoutBase {
         )}
       </View>
     )
-    /*
-    return (
-      <div className={classes.root}>
-        {itm.__render}
-      </div>
-    )
-    */
   }
 }
 

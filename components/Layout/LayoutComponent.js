@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { View } from 'react-native';
+
 import { layout } from 'modelui-core-runtime';
 
 export const events = layout.LayoutBase.events;
@@ -46,7 +48,7 @@ export default class LayoutComponent extends layout.LayoutBase.LayoutBase {
 
   render() {
     const { classes } = this.props;
-    //return LayoutRender(this.props.id, this.props.data, classes, config, 'div');
+
     const container_id = this.props.id;
     const data = this.props.data;
     const ignore = [];
@@ -64,6 +66,7 @@ export default class LayoutComponent extends layout.LayoutBase.LayoutBase {
         const item_data = data || {};
         const params = { id: id, key: id, classes: classes, data: item.data || item_data[item.pick] || item_data, config: item.config, manager: this.props.manager };
         const component = this.props.manager.getComponentInstance(item.type, params);
+
         if (component) {
           content.push(component)
         } else {
@@ -71,6 +74,6 @@ export default class LayoutComponent extends layout.LayoutBase.LayoutBase {
         }
       }
     }
-    return <div>{content}</div>;
+    return <View>{content}</View>;
   }
 }
