@@ -3,3 +3,4 @@
 yarn.lock
 __snapshots__/
 coverage
+.DS_Store
