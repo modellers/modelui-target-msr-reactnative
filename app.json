@@ -18,7 +18,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kajjjak.modeluitargetmsrreactnative"
     },
     "android": {
       "adaptiveIcon": {
@@ -34,6 +35,11 @@
             "@ui-kitten/components"
           ]
         }
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5110e5b1-f5c4-479f-a487-5404378dded6"
       }
     }
   }

@@ -17,3 +17,15 @@ Requires adding
 
     npx expo install react-native-web@~0.18.9 react-dom@18.1.0 @expo/webpack-config@^0.17.2
 
+
+### EAS (for Android and IOs)
+
+Follow these instructions https://docs.expo.dev/build/introduction/
+
+Running these commands
+   1. npm install -g eas-cli
+   2. eas login
+   3. (eas build:configure)
+   4. eas build -p ios --profile preview  # for ios simulator
+   5. (specify bundle identifier)
+   6. wait for queue
