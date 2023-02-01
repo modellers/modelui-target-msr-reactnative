@@ -126,7 +126,6 @@ class TabsComponent extends layout.LayoutBase.LayoutBase {
 
   styles = StyleSheet.create({
     tabContainer: {
-      // height: '100px',
       bottom: 0,
       alignItems: 'center',
       justifyContent: 'center',
