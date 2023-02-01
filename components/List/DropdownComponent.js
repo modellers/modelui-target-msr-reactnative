@@ -84,6 +84,9 @@ export const config = {
   state: structs.ListBase.StateList
 }
 
+// Auto complete -- const filterTitle = (item, query) => item.title.toLowerCase().includes(query.toLowerCase());
+
+
 class DropdownComponent extends structs.ListBase.ListBase {
   /**
    * Used to manage internal state
@@ -119,6 +122,8 @@ class DropdownComponent extends structs.ListBase.ListBase {
     // FIXME: key to select
     if (this.state.selectedIndex === undefined) return null;
     if (this.state.selectedIndex === null) return null;
+    if (this.state.data.length < this.state.selectedIndex) { this.state.selectedIndex = this.state.data.length - 1; }
+    if (this.state.data.length === 0) { return ""; }
     if (this.state.data) {
       // TODO: check bounds
       return this.state.data[this.state.selectedIndex].title;
@@ -135,8 +140,16 @@ class DropdownComponent extends structs.ListBase.ListBase {
 
   onSelect = (selectedIndex) => {
     // TODO: lookup the id and trigger select
+    if (selectedIndex < this.state.data.length) {
+      this.setSelectedId(this.state.data[selectedIndex].id);
+    }
   }
-
+  /* Auto complete -- 
+  onChangeText = (query) => {
+    setValue(query);
+    setData(this.state.data.filter(item => filterTitle(item, query)));
+  };
+  */
   render() {
 
     const data = this.state.data
@@ -147,9 +160,8 @@ class DropdownComponent extends structs.ListBase.ListBase {
         placeholder={this.props.config.options.label}
         value={value}
         onSelect={this.onSelect}
+      // Auto complete -- onChangeText={this.onChangeText}
       /*
-      onChangeText={onChangeText}>
-      
       options={this.state.data || []}
       getOptionLabel={(option) => option.title}
       defaultValue={this.getDefaultOption}
