@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet } from 'react-native';
 // material ui components
 import { Toggle } from '../../theme/components';
 import { Checkbox } from '../../theme/components';
@@ -118,6 +119,28 @@ const style = (theme) => ({
   },
 });
 
+const styles_row = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start'
+  },
+  toggle: {
+    margin: 2,
+  },
+});
+
+const styles_column = StyleSheet.create({
+  container: {
+    flexDirection: 'column',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start'
+  },
+  toggle: {
+    margin: 2,
+  },
+});
+
 class CheckboxComponent extends structs.ListBase.ListBase {
 
   handleSelect = (item, idx, evt) => {
@@ -147,7 +170,7 @@ class CheckboxComponent extends structs.ListBase.ListBase {
   render() {
     const { classes, config } = this.props;
     // defaults
-    const options = { ...{ direction: 'column', size: undefined, color: "secondary", labelPlacement: "start", iconIsSelected: undefined, iconUnSelected: undefined }, ...config.options }
+    const options = { ...{ direction: 'column', size: undefined, labelPlacement: "start", iconIsSelected: undefined, iconUnSelected: undefined }, ...config.options }
     let legend_text = '';
     let helper_text = '';
     const level = 1; // options.direction.includes('row')
@@ -182,28 +205,32 @@ class CheckboxComponent extends structs.ListBase.ListBase {
                 <Checkbox />
     
      */
-    const style = {
-      justifyContent: 'flex-start'
-    }
+
+    let styles = styles_column; // default
+    if (options.direction === 'row') { styles = styles_row; }
+
     if (1) {
       return (
         <View style={style}>
-          {this.renderFormLabel(legend_text)}
-          {
-            this.state.data.map((itm, idx) => {
-              return (
-                <Toggle
-                  key={itm.id}
-                  checked={itm.selected}
-                  disabled={itm.disabled || false}
-                  onChange={(event) => this.handleSelect(itm, idx, event)} name={itm.id}
-                >
-                  {itm.title}
-                </Toggle>
-              )
-            })
-          }
-          {this.renderFormHelperText(helper_text)}
+          <Layout style={styles.container} level='1'>
+            {this.renderFormLabel(legend_text)}
+            {
+              this.state.data.map((itm, idx) => {
+                return (
+                  <Toggle
+                    style={styles.toggle}
+                    key={itm.id}
+                    checked={itm.selected}
+                    disabled={itm.disabled || false}
+                    onChange={(event) => this.handleSelect(itm, idx, event)} name={itm.id}
+                  >
+                    {itm.title}
+                  </Toggle>
+                )
+              })
+            }
+            {this.renderFormHelperText(helper_text)}
+          </Layout>
         </View>
       )
     } else {
