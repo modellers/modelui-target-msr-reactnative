@@ -104,42 +104,23 @@ function ButtonRegular(props) {
 
   const link = data.link || {};
 
-  if (data.title) {
-    return (
-      <Button
-        key={data.id}
-        variant={data.variant || options.buttonVariant}
-        color={data.color || options.color}
-        size={data.size || options.size}
-        disabled={data.disabled || false}
-        href={link.url}
-        target={link.target}
-        startIcon={getIcon(data.icon)}
-        // button events 
-        onClick={handleClick}
-      >
-        {data.title}
-      </Button>
-    )
-  } else {
-    /*
-    return (
-      <IconButton
-        key={data.id}
-        variant={data.variant || options.buttonVariant}
-        color={data.color || options.color}
-        disabled={data.disabled || false}
-        href={link.url}
-        target={link.target}
-        alt={data.title}
-        // button events 
-        onClick={handleClick}
-      >
-        <Icon>{getIcon(data.icon)}</Icon>
-      </IconButton>
-    )
-    */
-  }
+  return (
+    <Button
+      key={data.id}
+      variant={data.variant || options.buttonVariant}
+      color={data.color || options.color}
+      size={data.size || options.size}
+      disabled={data.disabled || false}
+      href={link.url}
+      target={link.target}
+      accessoryRight={getIcon(data.icon)}
+      // button events 
+      onPress={handleClick}
+    >
+      {data.title}
+    </Button>
+  )
+
 }
 /*
 function ButtonFab(props) {
@@ -162,7 +143,7 @@ function ButtonFab(props) {
       disabled={data.disabled || false}
       size={size}
       // button events 
-      onClick={handleClick}
+      onPress={handleClick}
     >
       {
         getIcon(data.icon, classes.extendedIcon)
@@ -231,7 +212,7 @@ class ButtonComponent extends structs.ListBase.ListBase {
                 if (size === 'large') { size = undefined; }
                 if (itm.icon && (!itm.title)) {
                   return (
-                    <IconButton
+                    <Button
                       key={itm.id}
                       variant={variant}
                       color={itm.color || options.color}
@@ -240,13 +221,12 @@ class ButtonComponent extends structs.ListBase.ListBase {
                       alt={itm.title}
                       href={link.url}
                       target={link.target}
+                      accessoryRight={getIcon(itm.icon)}
                       // button events 
-                      onClick={(evt) => {
+                      onPress={(evt) => {
                         this.triggerEvent('selected', itm, evt)
                       }}
-                    >
-                      <Icon>{getIcon(itm.icon, 'small')}</Icon>
-                    </IconButton>)
+                    />)
                 } else {
                   return (
                     <Button
@@ -257,8 +237,8 @@ class ButtonComponent extends structs.ListBase.ListBase {
                       size={itm.size || options.size}
                       href={link.url}
                       target={link.target}
-                      startIcon={getIcon(itm.icon)}
-                      onClick={(evt) => {
+                      accessoryRight={getIcon(itm.icon)}
+                      onPress={(evt) => {
                         this.triggerEvent('selected', itm, evt)
                       }} >{itm.title || itm.label}</Button>)
                 }

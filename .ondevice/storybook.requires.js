@@ -45,11 +45,22 @@ if (parameters) {
 
 try {
   argsEnhancers.forEach((enhancer) => addArgsEnhancer(enhancer));
-} catch { }
+} catch {}
 
 const getStories = () => {
   return {
+    "./components/Button/ButtonComponent.stories.js": require("../components/Button/ButtonComponent.stories.js"),
     "./components/ButtonX/Button.stories.tsx": require("../components/ButtonX/Button.stories.tsx"),
+    "./components/Card/CardComponent.stories.js": require("../components/Card/CardComponent.stories.js"),
+    "./components/Grid/ContainerComponent.stories.js": require("../components/Grid/ContainerComponent.stories.js"),
+    "./components/Grid/GridComponent.stories.js": require("../components/Grid/GridComponent.stories.js"),
+    "./components/Grid/TabsComponent.stories.js": require("../components/Grid/TabsComponent.stories.js"),
+    "./components/Image/ImageComponent.stories.js": require("../components/Image/ImageComponent.stories.js"),
+    "./components/Input/CheckboxComponent.stories.js": require("../components/Input/CheckboxComponent.stories.js"),
+    "./components/Input/TextfieldComponent.stories.js": require("../components/Input/TextfieldComponent.stories.js"),
+    "./components/List/DropdownComponent.stories.js": require("../components/List/DropdownComponent.stories.js"),
+    "./components/List/ListComponent.stories.js": require("../components/List/ListComponent.stories.js"),
+    "./components/Text/TextComponent.stories.js": require("../components/Text/TextComponent.stories.js"),
   };
 };
 

@@ -4,7 +4,10 @@
 
 import { ApplicationProvider } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
-
+/*
+// icons
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
+*/
 //// /////////////////////////////
 ///  Importing MUI
 /// //////////////////////////////
