@@ -41,7 +41,7 @@ export const TextfieldBasic = (args) => {
       {util.StoryUtil.prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events,
-        { triggers: { populate: { value: "My new populated value" } } }
+        { triggers: { populate: { value: "My new populated value" }, replace: { value: "My new replaced value" } } }
       )}
       <TextfieldComponent {...props} />
     </ApplicationWrapper>
