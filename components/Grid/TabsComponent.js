@@ -126,7 +126,8 @@ class TabsComponent extends layout.LayoutBase.LayoutBase {
 
   styles = StyleSheet.create({
     tabContainer: {
-      height: 64,
+      // height: '100px',
+      bottom: 0,
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -145,6 +146,16 @@ class TabsComponent extends layout.LayoutBase.LayoutBase {
     }
   }
 
+  shouldLoadComponent(index) {
+    // FIXME: causes view to move back and forth since it has the old value
+    // lazy loading
+    /*
+    if (!this.state) { return true; }
+    return index === this.state.selectedIndex && (!this.state.data[this.state.selectedIndex].selected);
+    */
+    return true;
+  }
+
   render() {
 
     const {
@@ -153,12 +164,10 @@ class TabsComponent extends layout.LayoutBase.LayoutBase {
 
     const { classes, config } = this.props;
 
-    const shouldLoadComponent = (index) => index === state.selectedIndex;
-
     return (
       <TabView
         selectedIndex={state.selectedIndex}
-        shouldLoadComponent={shouldLoadComponent}
+        shouldLoadComponent={index => this.shouldLoadComponent(index)}
         onSelect={index => this.handleChange(index)}
       >
         {state.data.map((itm, idx) => {
