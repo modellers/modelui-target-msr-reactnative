@@ -80,38 +80,37 @@ export const createEventTriggers = (
     const triggers = triggers_fn
     trigger_data = trigger_data || {} // default none data
     return (
-        <ScrollView>
-            <View>
-                {
-                    Object.keys(triggers).map((trigger_id, i) => {
-                        let values = { title: trigger_id + '_value', id: trigger_id + '_value' }
-                        if (trigger_data[trigger_id]) {
-                            values = trigger_data[trigger_id]
-                        }
-                        return (
-                            <Button
-                                key={trigger_id + '_key_' + triggers[trigger_id].name}
-                                title={triggers[trigger_id].info.name}
-                                accessibilityLabel={triggers[trigger_id].info.description}
-                                onPress={() => {
-                                    if (typeof values === 'function') {
-                                        eventHandlerInstance.addAction(
-                                            component_id,
-                                            trigger_id,
-                                            values()
-                                        )
-                                    } else {
-                                        eventHandlerInstance.addAction(component_id, trigger_id, values)
-                                    }
-                                }}
-                            >
-                                {triggers[trigger_id].info.name}
-                            </Button>
-                        )
-                    })
-                }
-            </View>
-        </ScrollView>
+        <View>
+            {
+                Object.keys(triggers).map((trigger_id, i) => {
+                    let values = { title: trigger_id + '_value', id: trigger_id + '_value' }
+                    if (trigger_data[trigger_id]) {
+                        values = trigger_data[trigger_id]
+                    }
+                    return (
+                        <Button
+                            key={trigger_id + '_key_' + triggers[trigger_id].name}
+                            title={triggers[trigger_id].info.name}
+                            accessibilityLabel={triggers[trigger_id].info.description}
+                            onPress={() => {
+                                if (typeof values === 'function') {
+                                    eventHandlerInstance.addAction(
+                                        component_id,
+                                        trigger_id,
+                                        values()
+                                    )
+                                } else {
+                                    eventHandlerInstance.addAction(component_id, trigger_id, values)
+                                }
+                            }}
+                        >
+                            {triggers[trigger_id].info.name}
+                        </Button>
+                    )
+                })
+            }
+        </View>
+
     )
 }
 
