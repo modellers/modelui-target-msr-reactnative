@@ -1,6 +1,7 @@
 import React from 'react';
 
 // test utils
+import { prepStoryComponent } from '../../util/StoryUtil';
 import { util } from 'modelui-core-runtime'
 import { layout } from 'modelui-core-runtime';
 import { action } from '@storybook/addon-actions'
@@ -41,7 +42,7 @@ export const Basic = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <List  {...props} />
@@ -80,7 +81,7 @@ export const BasicSubtitle = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <List  {...props} />
@@ -128,7 +129,7 @@ export const BasicAvatar = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <List  {...props} />
@@ -179,7 +180,7 @@ export const SecondaryButton = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <List  {...props} />

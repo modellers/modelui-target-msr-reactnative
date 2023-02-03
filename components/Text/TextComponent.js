@@ -138,7 +138,7 @@ class TextComponent extends structs.ListBase.ListBase {
           )
         })
         }
-      </ScrollView >
+      </ScrollView>
     )
   }
 }

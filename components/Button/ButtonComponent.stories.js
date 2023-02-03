@@ -1,6 +1,7 @@
 import React from 'react';
 
 // test utils
+import { prepStoryComponent } from '../../util/StoryUtil';
 import { util } from 'modelui-core-runtime'
 import { layout } from 'modelui-core-runtime';
 import { action } from '@storybook/addon-actions'
@@ -32,7 +33,7 @@ export const SingleButton = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Button {...props} />
@@ -70,7 +71,7 @@ export const TextButtons = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Button {...props} />
@@ -97,7 +98,7 @@ export const SingleIcon = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Button {...props} />
@@ -126,7 +127,7 @@ export const SingleIconText = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Button {...props} />
@@ -162,7 +163,7 @@ export const IconButtons = (args) => {
   }
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Button {...props} />
@@ -205,7 +206,7 @@ export const IconTextButtons = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Button  {...props} />
@@ -234,7 +235,7 @@ export const SingleFab = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Button {...props} />
@@ -273,7 +274,7 @@ export const SingleFabs = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Button {...props} />

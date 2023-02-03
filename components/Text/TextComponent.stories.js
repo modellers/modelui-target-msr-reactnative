@@ -1,7 +1,7 @@
 import React from 'react';
-
 // test utils
-import { util } from 'modelui-core-runtime'
+import { prepStoryComponent } from '../../util/StoryUtil';
+import { util } from 'modelui-core-runtime';
 import { layout } from 'modelui-core-runtime';
 import { action } from '@storybook/addon-actions'
 import registerComponents from '../Components';
@@ -49,7 +49,7 @@ export const TextBasic = (args) => {
   }
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events, {
         triggers: {

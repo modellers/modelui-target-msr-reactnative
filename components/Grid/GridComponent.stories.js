@@ -1,6 +1,7 @@
 import React from 'react';
 
 // test utils
+import { prepStoryComponent } from '../../util/StoryUtil';
 import { util } from 'modelui-core-runtime'
 import { layout } from 'modelui-core-runtime';
 import { action } from '@storybook/addon-actions'
@@ -47,7 +48,7 @@ export const GridBasic = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Grid {...props} />
@@ -75,7 +76,7 @@ export const GridText = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Grid {...props} />
@@ -150,7 +151,7 @@ export const GridGrid = (args) => {
 
   return (
     <ApplicationWrapper>
-      {util.StoryUtil.prepStoryComponent(
+      {prepStoryComponent(
         layout.Manager.ComponentManager.getInstance(), action, registerComponents,
         props, triggers, events)}
       <Grid {...props} />
