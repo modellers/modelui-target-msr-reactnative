@@ -74,6 +74,6 @@ export default class LayoutComponent extends layout.LayoutBase.LayoutBase {
         }
       }
     }
-    return <View>{content}</View>;
+    return content;
   }
 }

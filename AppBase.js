@@ -2,7 +2,10 @@ import React from 'react';
 import { ScrollView, View, Text } from 'react-native';
 import { layout, registerCoreComponents } from 'modelui-core-runtime';
 import { Layout } from './components/Grid/Grid';
-import { ApplicationWrapper } from './theme/components'
+import { ApplicationWrapper } from './theme/components';
+import { TabMenu } from './components/Menu/Menu';
+import { SafeAreaView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
 // components
 import registerComponents from './components/Components';
@@ -85,19 +88,21 @@ class AppBase extends React.Component {
     const is_ready = true;
     const manager = this._component_manager;
     // return (<Text style={{ fontSize: 46 }}>Error loading app</Text>)
-
     if (is_ready) {
       return (
-        <View>
-          <Layout
-            id="document_root"
-            schema={{}}
-            config={{
-            }}
-            data={this.state.view}
-            manager={manager}
-          />
-        </View>)
+        <SafeAreaView style={{ flex: 1 }}>
+          <NavigationContainer>
+            <Layout
+              id="document_root"
+              schema={{}}
+              config={{
+              }}
+              data={this.state.view}
+              manager={manager}
+            />
+          </NavigationContainer>
+        </SafeAreaView>
+      )
     } else {
       return (<Text style={{ fontSize: 46 }}>Error loading app</Text>)
     }

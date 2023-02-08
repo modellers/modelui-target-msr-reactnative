@@ -59,6 +59,7 @@ const getStories = () => {
     "./components/Input/TextfieldComponent.stories.js": require("../components/Input/TextfieldComponent.stories.js"),
     "./components/List/DropdownComponent.stories.js": require("../components/List/DropdownComponent.stories.js"),
     "./components/List/ListComponent.stories.js": require("../components/List/ListComponent.stories.js"),
+    "./components/Menu/TabMenuComponent.stories.js": require("../components/Menu/TabMenuComponent.stories.js"),
     "./components/Text/TextComponent.stories.js": require("../components/Text/TextComponent.stories.js"),
   };
 };

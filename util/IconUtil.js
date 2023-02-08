@@ -1,6 +1,8 @@
 import React from 'react';
 const LIB_FONT_AWESOME = "font-awesome"; // https://fontawesome.com/v4.7.0/icons/
 const LIB_MATERIAL_UI = "material-ui"; // https://material-ui.com/components/material-icons/
+// https://www.npmjs.com/package/react-native-vector-icons
+
 /*
 const LIB_UI_KITTEN = "ui-kitten"; // https://akveo.github.io/eva-icons/#/
 import { Icon } from '@ui-kitten/components';

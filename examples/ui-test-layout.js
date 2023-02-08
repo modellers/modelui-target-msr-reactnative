@@ -66,6 +66,41 @@ const text_rows = {
   }
 }
 
+
+const text_rows_bold = {
+  data: [{
+    'id': 'select_value',
+    'typography': 'chapter',
+    'text': 'Sed eget orci tellus. Suspendisse turpis ligula, viverra nec elementum a, posuere id urna. Curabitur vitae felis sed neque venenatis rhoncus quis id nibh. Pellentesque vitae pretium nunc. Duis eu interdum nulla. Sed non cursus sem. Sed sit amet iaculis lacus. Nunc auctor lectus accumsan, hendrerit urna et, porta ipsum. Aenean urna arcu, pretium et eros nec, facilisis luctus dolor. Pellentesque porttitor enim ac arcu placerat iaculis. Sed lorem urna, volutpat at ultrices quis, aliquet quis est. Praesent mi libero, gravida fringilla augue in, laoreet luctus nisl. Phasellus in aliquam nulla. Phasellus eu neque laoreet, aliquet arcu vel, pellentesque orci. Nunc elit nisi, cursus ut odio at, eleifend accumsan ante. In sapien nisl, rhoncus ut massa ac, venenatis auctor risus.'
+  }],
+  id: 'f92ec0aa31e145679asdfasd3a7d81a862c5b055f88946',
+  schema: {},
+  type: 'texts',
+  config: {
+    options: {
+    }
+  }
+}
+
+const text_simple = {
+  data: [{
+    'id': 'text_simpleid0',
+    'typography': 'heading',
+    'text': 'Hello World'
+  }, {
+    'id': 'text_simpleid1',
+    'typography': 'section',
+    'text': 'This is a section!!'
+  }],
+  id: 'text_simple92ec0aa31e145679d3a7d81a862c5b055f889462',
+  schema: {},
+  type: 'texts',
+  config: {
+    options: {
+    }
+  }
+}
+
 const tabs = {
   data: [{
     'id': 'id1',
@@ -89,7 +124,7 @@ const tabs = {
     'icon': 'font-awesome:person',
     'data': 'Some text here 3',
   }],
-  id: 'f92ec0aa31e145679d3a7d81a862c5b055f88946',
+  id: 'f92ec0aa31e145679d3assa7d81a862c5b055f88946',
   schema: {},
   type: 'tabs',
   config: {
@@ -299,19 +334,55 @@ const cards = {
   schema: {}
 }
 
-const app = {
-  data: [{
+
+const grid_rows_main = {
+  data: [/*{
     'id': 'id1',
     'title': 'Title 1',
     'content': cards
-  }, {
-    'id': 'id2',
-    'title': 'Title 2',
-    'content': text_rows
-  }],
-  id: 'asdfs54sfasdfasdfasdf43dfasdgf',
+  }, */
+    {
+      'id': 'id1',
+      'title': 'Title 1',
+      'content': text_simple
+    }, {
+      'id': 'id2',
+      'title': 'Title 2',
+      'content': text_rows
+    }],
+  id: 'asdfs54sfasdfasdfasdf4asdf3dfasdgf',
   schema: {},
   type: 'grid-rows',
+  config: {
+    options: {
+      justifyContent: 'center',
+      alignContent: 'right'
+    }
+  }
+}
+
+const app = {
+  data: [/*{
+    'id': 'id1',
+    'title': 'Title 1',
+    'content': cards
+  }, */
+    {
+      'id': 'id1',
+      'title': 'Title 1',
+      'content': text_simple
+    }, {
+      'id': 'id2',
+      'title': 'Title 2',
+      'content': text_rows
+    }, {
+      'id': 'id3',
+      'title': 'Title 3',
+      'content': text_rows_bold
+    }],
+  id: 'asdfs54sfasdfasdfasdf43dfasdgf',
+  schema: {},
+  type: 'menu-tabs',
   config: {
     options: {
       justifyContent: 'center',
