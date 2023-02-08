@@ -2,6 +2,8 @@ import React from 'react';
 // material ui components
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
 import { Layout, Text } from '@ui-kitten/components'; // testing
 //import { Layouter as LayoutRender } from '../Layout/LayoutComponent';
 import { layout } from 'modelui-core-runtime';
@@ -96,7 +98,7 @@ function ListAvatar(props) {
 }
 */
 
-const RenderScreen = ({ key, item, manager }) => {
+const RenderScreen = ({ item, manager }) => {
   /*
       <LayoutRender
         id={item.id}
@@ -113,7 +115,7 @@ const RenderScreen = ({ key, item, manager }) => {
   const component = manager.getComponentInstance(item.type, params);
 
   return (
-    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <Layout key={'layout-' + item.id} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       {component}
     </Layout>
   )
@@ -123,7 +125,9 @@ class TabMenuComponent extends structs.ListBase.ListBase {
 
   constructor(props) {
     super(props);
-    if (1) {
+    if (props.config.options.position === 'top') {
+      this.Tab = createMaterialTopTabNavigator();
+    } else {
       this.Tab = createBottomTabNavigator();
     }
   }
@@ -142,6 +146,7 @@ class TabMenuComponent extends structs.ListBase.ListBase {
         {
           this.state.data.map((itm, idx) => {
             return (<Tab.Screen
+              key={item.idr}
               name={itm.title}
               children={() => <RenderScreen key={itm.id} item={itm.content} manager={manager} />}
               title={itm.title}

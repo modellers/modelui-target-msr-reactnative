@@ -386,7 +386,8 @@ const app = {
   config: {
     options: {
       justifyContent: 'center',
-      alignContent: 'right'
+      alignContent: 'right',
+      position: 'top'
     }
   }
 }
