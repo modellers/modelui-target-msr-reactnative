@@ -407,13 +407,13 @@ const subtabs = {
 }
 
 const buttons_menu_page1 = {
-  id: 'buttons_menu_page1_id',
+  id: 'buttons-page_id1',
   type: 'buttons',
   data: [{
-    'id': 'buttons_menu_page1_id2',
+    'id': 'button-page_id2',
     'title': 'page 2'
   }, {
-    'id': 'buttons_menu_page1_id3',
+    'id': 'button-page_id3',
     'title': 'page 3',
   }],
   config: { options: {} },
@@ -421,13 +421,13 @@ const buttons_menu_page1 = {
 }
 
 const buttons_menu_page2 = {
-  id: 'buttons_menu_page2_id',
+  id: 'buttons-page_id2',
   type: 'buttons',
   data: [{
-    'id': 'buttons_menu_page2_id1',
+    'id': 'button-page_id1',
     'title': 'page 1'
   }, {
-    'id': 'buttons_menu_page2_id3',
+    'id': 'button-page_id3',
     'title': 'page 3',
   }],
   config: { options: {} },
@@ -435,13 +435,13 @@ const buttons_menu_page2 = {
 }
 
 const buttons_menu_page3 = {
-  id: 'buttons_menu_page3_id',
+  id: 'buttons-page_id3',
   type: 'buttons',
   data: [{
-    'id': 'buttons_menu_page3_id1',
+    'id': 'button-page_id1',
     'title': 'page 1'
   }, {
-    'id': 'buttons_menu_page3_id2',
+    'id': 'button-page_id2',
     'title': 'page 2',
   }],
   config: { options: {} },
@@ -478,7 +478,7 @@ const app = {
   data: [{
     'id': 'main_tabls_id1',
     'title': 'Title 1',
-    'content': subtabs
+    'content': buttons_menu_page2 //subtabs
   }, {
     'id': 'main_tabls_id2',
     'title': 'About',
@@ -489,10 +489,10 @@ const app = {
   type: 'menu-tabs',
   config: {
     options: {
-      initial: 'main_tabls_id2',
+      initial: 'main_tabls_id1',
       justifyContent: 'center',
       alignContent: 'center',
-      position: 'bottom'
+      position: 'top'
     }
   }
 }

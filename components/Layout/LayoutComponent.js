@@ -42,8 +42,12 @@ export default class LayoutComponent extends layout.LayoutBase.LayoutBase {
    */
 
   constructor(props) {
+    if (!props.navigation) {
+      console.error("LayoutComponent: Navigation was not receaved through props for " + props.id)
+    }
     props.config.options = props.config.options || {};
     super(props);
+    this.navigation = props.navigation;
   }
 
   render() {
@@ -61,10 +65,10 @@ export default class LayoutComponent extends layout.LayoutBase.LayoutBase {
       let id = item.id;
       // build the component
       if (item.type === 'layout') {
-        content.push(<Layouter id={id} key={id} classes={classes} data={data} config={item.config} manager={this.props.manager} />);
+        content.push(<Layouter id={id} key={id} classes={classes} data={data} config={item.config} manager={this.props.manager} navigation={this.navigation} />);
       } else {
         const item_data = data || {};
-        const params = { id: id, key: id, classes: classes, data: item.data || item_data[item.pick] || item_data, config: item.config, manager: this.props.manager };
+        const params = { id: id, key: id, classes: classes, data: item.data || item_data[item.pick] || item_data, config: item.config, manager: this.props.manager, navigation: this.navigation };
         const component = this.props.manager.getComponentInstance(item.type, params);
 
         if (component) {

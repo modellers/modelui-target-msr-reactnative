@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 /*
 import AccordionComponent, { events as eventsAccordion, triggers as triggersAccordion, config as configAccordion } from './AccordionComponent'
 */
@@ -16,8 +17,9 @@ export function View(props) {
 }
 
 export function Layout(props) {
+    const navigation = useNavigation(); // https://reactnavigation.org/docs/use-navigation
     // lets enumerate schema to extract uiSchema and validation
-    return (<LayoutComponent {...props} />);
+    return (<LayoutComponent {...props} navigation={navigation} />);
 }
 
 export function Container(props) {

@@ -82,11 +82,11 @@ const RenderHeader = ({ key, item }) => {
   return <Text>{item.title}</Text>;
 };
 
-const RenderScreen = ({ item, manager }) => {
+const RenderScreen = ({ item, manager, navigation }) => {
   if (typeof (item) === 'string') {
     return <Text>{item}</Text>
   } else {
-    const params = { id: item.id, key: item.id, classes: {}, data: item.data, config: item.config, manager: manager };
+    const params = { id: item.id, key: item.id, classes: {}, data: item.data, config: item.config, manager: manager, navigation: navigation };
     const component = manager.getComponentInstance(item.type, params);
     return (
       <SafeAreaView style={{ flex: 1 }}>
@@ -99,6 +99,9 @@ const RenderScreen = ({ item, manager }) => {
 class TabMenuComponent extends structs.ListBase.ListBase {
 
   constructor(props) {
+    if (!props.navigation) {  // https://reactnavigation.org/docs/navigation-prop
+      console.error('MenuComponent: navigation was not receaved through props for ' + props.id)
+    }
     super(props);
     if (props.config.options.position === 'top') {
       this.Tab = createMaterialTopTabNavigator();
@@ -107,7 +110,18 @@ class TabMenuComponent extends structs.ListBase.ListBase {
     } else {
       this.Tab = createStackNavigator();
     }
+    this.navigation = props.navigation;
+
   }
+
+  updateView = function (action, arr, updated, data) {
+    // extend by parent
+    if (action === 'select') {
+      // this.setState(data);
+      this.navigation.navigate(arr[0].id); //('page_id3')
+    }
+    return true;
+  };
 
   render() {
     const manager = this.props.manager;
@@ -125,7 +139,7 @@ class TabMenuComponent extends structs.ListBase.ListBase {
             return (<Tab.Screen
               key={item.id}
               name={itm.id}
-              children={() => <RenderScreen key={itm.id} item={itm.content} manager={manager} />}
+              children={() => <RenderScreen key={itm.id} item={itm.content} manager={manager} navigation={this.navigation} />}
               title={itm.title}
               options={{
                 title: itm.title,
