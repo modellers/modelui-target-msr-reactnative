@@ -478,7 +478,7 @@ const app = {
   data: [{
     'id': 'main_tabls_id1',
     'title': 'Title 1',
-    'content': buttons_menu_page2 //subtabs
+    'content': subtabs
   }, {
     'id': 'main_tabls_id2',
     'title': 'About',
@@ -492,7 +492,7 @@ const app = {
       initial: 'main_tabls_id1',
       justifyContent: 'center',
       alignContent: 'center',
-      position: 'top'
+      position: 'bottom'
     }
   }
 }
