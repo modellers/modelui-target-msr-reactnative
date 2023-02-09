@@ -396,7 +396,7 @@ const subtabs = {
   }],
   id: 'sssfafasdfassubtabssubtabssubtabs',
   schema: {},
-  type: 'menu-tabs',
+  type: 'menu',
   config: {
     options: {
       justifyContent: 'center',
@@ -464,7 +464,7 @@ const subpages = {
   }],
   id: 'sssfaasdfsdfsdfassubtabssubtabssubtabs',
   schema: {},
-  type: 'menu-tabs',
+  type: 'menu',
   config: {
     options: {
       initial: 'page_id2',
@@ -486,7 +486,7 @@ const app = {
   }],
   id: 'asdfs54sfasdfasdfasdf43dfasdgf',
   schema: {},
-  type: 'menu-tabs',
+  type: 'menu',
   config: {
     options: {
       initial: 'main_tabls_id1',

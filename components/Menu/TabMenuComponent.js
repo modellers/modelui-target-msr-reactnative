@@ -61,7 +61,7 @@ export const item = {
 
 export const config = {
   name: "TabMenu",
-  type: "menu-tabs",
+  type: "menu",
   author: "Kjartan Jónsson",
   description: "Tab Menu component",
   version: 0.1,
