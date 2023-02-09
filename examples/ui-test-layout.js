@@ -101,6 +101,25 @@ const text_simple = {
   }
 }
 
+const text_about = {
+  data: [{
+    'id': 'text_aboutid0',
+    'typography': 'heading',
+    'text': 'About page'
+  }, {
+    'id': 'text_aboutid1',
+    'typography': 'section',
+    'text': 'This is a about section!!'
+  }],
+  id: 'text_simple92ec0aa3ss1e145679d3a7d81a862c5b055f889462',
+  schema: {},
+  type: 'texts',
+  config: {
+    options: {
+    }
+  }
+}
+
 const tabs = {
   data: [{
     'id': 'id1',
@@ -361,33 +380,119 @@ const grid_rows_main = {
   }
 }
 
-const app = {
-  data: [/*{
-    'id': 'id1',
-    'title': 'Title 1',
-    'content': cards
-  }, */
-    {
-      'id': 'id1',
-      'title': 'Title 1',
-      'content': text_simple
-    }, {
-      'id': 'id2',
-      'title': 'Title 2',
-      'content': text_rows
-    }, {
-      'id': 'id3',
-      'title': 'Title 3',
-      'content': text_rows_bold
-    }],
-  id: 'asdfs54sfasdfasdfasdf43dfasdgf',
+const subtabs = {
+  data: [{
+    'id': 'sub_id1',
+    'title': 'Sub 1',
+    'content': text_simple
+  }, {
+    'id': 'sub_id2',
+    'title': 'Sub 2',
+    'content': text_rows
+  }, {
+    'id': 'sub_id3',
+    'title': 'Sub 3',
+    'content': text_rows_bold
+  }],
+  id: 'sssfafasdfassubtabssubtabssubtabs',
   schema: {},
   type: 'menu-tabs',
   config: {
     options: {
       justifyContent: 'center',
-      alignContent: 'right',
+      alignContent: 'center',
       position: 'top'
+    }
+  }
+}
+
+const buttons_menu_page1 = {
+  id: 'buttons_menu_page1_id',
+  type: 'buttons',
+  data: [{
+    'id': 'buttons_menu_page1_id2',
+    'title': 'page 2'
+  }, {
+    'id': 'buttons_menu_page1_id3',
+    'title': 'page 3',
+  }],
+  config: { options: {} },
+  schema: {}
+}
+
+const buttons_menu_page2 = {
+  id: 'buttons_menu_page2_id',
+  type: 'buttons',
+  data: [{
+    'id': 'buttons_menu_page2_id1',
+    'title': 'page 1'
+  }, {
+    'id': 'buttons_menu_page2_id3',
+    'title': 'page 3',
+  }],
+  config: { options: {} },
+  schema: {}
+}
+
+const buttons_menu_page3 = {
+  id: 'buttons_menu_page3_id',
+  type: 'buttons',
+  data: [{
+    'id': 'buttons_menu_page3_id1',
+    'title': 'page 1'
+  }, {
+    'id': 'buttons_menu_page3_id2',
+    'title': 'page 2',
+  }],
+  config: { options: {} },
+  schema: {}
+}
+
+const subpages = {
+  data: [{
+    'id': 'page_id1',
+    'title': 'Page 1',
+    'content': buttons_menu_page1
+  }, {
+    'id': 'page_id2',
+    'title': 'Page 2',
+    'content': buttons_menu_page2
+  }, {
+    'id': 'page_id3',
+    'title': 'Page 3',
+    'content': buttons_menu_page3
+  }],
+  id: 'sssfaasdfsdfsdfassubtabssubtabssubtabs',
+  schema: {},
+  type: 'menu-tabs',
+  config: {
+    options: {
+      initial: 'page_id2',
+      justifyContent: 'center',
+      alignContent: 'center'
+    }
+  }
+}
+
+const app = {
+  data: [{
+    'id': 'main_tabls_id1',
+    'title': 'Title 1',
+    'content': subtabs
+  }, {
+    'id': 'main_tabls_id2',
+    'title': 'About',
+    'content': subpages
+  }],
+  id: 'asdfs54sfasdfasdfasdf43dfasdgf',
+  schema: {},
+  type: 'menu-tabs',
+  config: {
+    options: {
+      initial: 'main_tabls_id2',
+      justifyContent: 'center',
+      alignContent: 'center',
+      position: 'bottom'
     }
   }
 }

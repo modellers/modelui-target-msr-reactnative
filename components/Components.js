@@ -37,5 +37,4 @@ export default function registerComponents(component_manager) {
     registerTextfield(component_manager);
     registerCard(component_manager);
     registerTabMenu(component_manager);
-
 }

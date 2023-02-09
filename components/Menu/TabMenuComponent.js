@@ -3,16 +3,11 @@ import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import { Layout, Text } from '@ui-kitten/components'; // testing
-//import { Layouter as LayoutRender } from '../Layout/LayoutComponent';
-import { layout } from 'modelui-core-runtime';
-const Layouter = layout.Layout.Layouter;
-// components
-// import { AvatarRender } from '../Avatar/AvatarComponent'
-
+import { SafeAreaView } from 'react-native';
+import { Text } from '@ui-kitten/components'; // testing
 import { structs } from 'modelui-core-runtime';
-import { util } from 'modelui-core-runtime';
 
 export const events = structs.ListBase.events;
 export const triggers = structs.ListBase.triggers;
@@ -36,9 +31,9 @@ export const options = {
 }
 
 export const item = {
-  "id": "menu-tab-item",
+  "id": "menu-item",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Menu Tab item",
+  "title": "Menu item",
   "description": "Placed in list",
   "x-layout": "component-item",
   "type": "object",
@@ -71,54 +66,34 @@ export const config = {
   description: "Tab Menu component",
   version: 0.1,
   relation: {
-    contains: ["menu-tab-item"],
+    contains: ["menu-item"],
     within: "component" // parent
   },
   contains: {
-    "menu-tab-item": item
+    "menu-item": item
   },
   options: options,
   state: structs.ListBase.StateList
 }
-/*
-const style = (theme) => ({
-  root: {
-    width: '100%'
-  },
-});
 
-function ListAvatar(props) {
-  if (!props.avatar) return null;
-  return (  // render array of avatars
-    <ListItemAvatar>
-      <AvatarRender config={props.avatar.config} data={props.avatar.data} />
-    </ListItemAvatar>
-  )
-
-}
-*/
+const RenderHeader = ({ key, item }) => {
+  // https://reactnavigation.org/docs/bottom-tab-navigator/#header-related-options
+  return undefined; // displays nothing
+  return <Text>{item.title}</Text>;
+};
 
 const RenderScreen = ({ item, manager }) => {
-  /*
-      <LayoutRender
-        id={item.id}
-        schema={{}}
-        config={{}}
-        data={item.data}
-        manager={manager}
-      />  
-
-      <Text key={key}>{item.title}</Text>
-  */
-
-  const params = { id: item.id, key: item.id, classes: {}, data: item.data, config: item.config, manager: manager };
-  const component = manager.getComponentInstance(item.type, params);
-
-  return (
-    <Layout key={'layout-' + item.id} style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      {component}
-    </Layout>
-  )
+  if (typeof (item) === 'string') {
+    return <Text>{item}</Text>
+  } else {
+    const params = { id: item.id, key: item.id, classes: {}, data: item.data, config: item.config, manager: manager };
+    const component = manager.getComponentInstance(item.type, params);
+    return (
+      <SafeAreaView style={{ flex: 1 }}>
+        {component}
+      </SafeAreaView>
+    )
+  }
 };
 
 class TabMenuComponent extends structs.ListBase.ListBase {
@@ -127,8 +102,10 @@ class TabMenuComponent extends structs.ListBase.ListBase {
     super(props);
     if (props.config.options.position === 'top') {
       this.Tab = createMaterialTopTabNavigator();
-    } else {
+    } else if (props.config.options.position === 'bottom') {
       this.Tab = createBottomTabNavigator();
+    } else {
+      this.Tab = createStackNavigator();
     }
   }
 
@@ -138,7 +115,7 @@ class TabMenuComponent extends structs.ListBase.ListBase {
 
     return (
       <Tab.Navigator
-        initialRouteName="Feed"
+        initialRouteName={this.props.config.options.initial}
         screenOptions={{
           tabBarActiveTintColor: '#e91e63',
         }}
@@ -146,11 +123,14 @@ class TabMenuComponent extends structs.ListBase.ListBase {
         {
           this.state.data.map((itm, idx) => {
             return (<Tab.Screen
-              key={item.idr}
-              name={itm.title}
+              key={item.id}
+              name={itm.id}
               children={() => <RenderScreen key={itm.id} item={itm.content} manager={manager} />}
               title={itm.title}
               options={{
+                title: itm.title,
+                tabBarShowLabel: true, // for more https://reactnavigation.org/docs/bottom-tab-navigator/
+                // Formats header --- header: () => <RenderHeader key={itm.id} item={itm} />,
                 tabBarIcon: ({ size, focused, color }) => { },
                 tabBarLabel: itm.title
               }}

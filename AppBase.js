@@ -10,6 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 // components
 import registerComponents from './components/Components';
 import registerPluginComponents from './components/Plugins';
+import registerDebuggingComponents from './components/Debugging';
 
 class AppBase extends React.Component {
 
@@ -39,7 +40,7 @@ class AppBase extends React.Component {
     this._event_manager.clearAll();
 
     // add specific solutions
-    //TODO: registerEventDebugging();
+    registerDebuggingComponents(this._component_manager);
     //TODO: registerEventApp();
 
   }
