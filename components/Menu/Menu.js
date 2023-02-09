@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TabMenuComponent, { events as eventsTabMenu, triggers as triggersTabMenu, config as configTabMenu } from './TabMenuComponent'
+import TabMenuComponent, { events as eventsTabMenu, triggers as triggersTabMenu, config as configTabMenu } from './MenuComponent'
 
 export function TabMenu(props) {
     // lets enumerate schema to extract uiSchema and validation

@@ -10,7 +10,7 @@ import { ApplicationWrapper } from '../../theme/components';
 
 // components
 import { List } from './List';
-import { triggers, events, config } from './TabMenuComponent'
+import { triggers, events, config } from './MenuComponent'
 /// Event addon
 export default {
   title: 'Components/List',
