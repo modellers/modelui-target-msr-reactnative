@@ -16,7 +16,7 @@ export const triggers = structs.ListBase.triggers;
 export const options = {
   "id": "menu-tab",
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "Menu Tab options",
+  "description": "Menu options",
   "x-layout": "component",
   "type": "object",
   "version": 0.1,
@@ -64,7 +64,7 @@ export const config = {
   name: "TabMenu",
   type: "menu",
   author: "Kjartan Jónsson",
-  description: "Tab Menu component",
+  description: "Menu component",
   version: 0.1,
   relation: {
     contains: ["menu-item"],
@@ -97,21 +97,21 @@ const RenderScreen = ({ item, manager, navigation }) => {
   }
 };
 
-class TabMenuComponent extends structs.ListBase.ListBase {
+class MenuComponent extends structs.ListBase.ListBase {
 
   constructor(props) {
     if (!props.navigation) {  // https://reactnavigation.org/docs/navigation-prop
       console.error('MenuComponent: navigation was not receaved through props for ' + props.id)
     }
     super(props);
-    if (props.config.options.position === 'tabs-top') {
-      this.Tab = createMaterialTopTabNavigator();
-    } else if (props.config.options.position === 'tabs-bottom') {
-      this.Tab = createMaterialBottomTabNavigator();
-    } else if (props.config.options.position === 'tabs') {
-      this.Tab = createBottomTabNavigator();
+    if (props.config.options.variant === 'tabs-top') {
+      this.MenuView = createMaterialTopTabNavigator();
+    } else if (props.config.options.variant === 'tabs-bottom') {
+      this.MenuView = createMaterialBottomTabNavigator();
+    } else if (props.config.options.variant === 'tabs') {
+      this.MenuView = createBottomTabNavigator();
     } else { // stack
-      this.Tab = createStackNavigator();
+      this.MenuView = createStackNavigator();
     }
     this.navigation = props.navigation;
 
@@ -121,17 +121,17 @@ class TabMenuComponent extends structs.ListBase.ListBase {
     // extend by parent
     if (action === 'select') {
       // this.setState(data);
-      this.navigation.navigate(arr[0].id); //('page_id3')
+      this.navigation.navigate(arr[0].id);
     }
     return true;
   };
 
   render() {
     const manager = this.props.manager;
-    const Tab = this.Tab;
+    const MenuView = this.MenuView;
 
     return (
-      <Tab.Navigator
+      <MenuView.Navigator
         initialRouteName={this.props.config.options.initial}
         screenOptions={{
           tabBarActiveTintColor: '#e91e63',
@@ -139,8 +139,8 @@ class TabMenuComponent extends structs.ListBase.ListBase {
       >
         {
           this.state.data.map((itm, idx) => {
-            return (<Tab.Screen
-              key={item.id}
+            return (<MenuView.Screen
+              key={itm.id}
               name={itm.id}
               children={() => <RenderScreen key={itm.id} item={itm.content} manager={manager} navigation={this.navigation} />}
               title={itm.title}
@@ -155,10 +155,10 @@ class TabMenuComponent extends structs.ListBase.ListBase {
           }
           )
         }
-      </Tab.Navigator>
+      </MenuView.Navigator>
     )
   }
 
 }
 
-export default TabMenuComponent;
+export default MenuComponent;

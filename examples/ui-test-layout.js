@@ -401,7 +401,7 @@ const subtabs = {
     options: {
       justifyContent: 'center',
       alignContent: 'center',
-      position: 'top'
+      variant: 'tabs-top'
     }
   }
 }
@@ -469,7 +469,8 @@ const subpages = {
     options: {
       initial: 'page_id2',
       justifyContent: 'center',
-      alignContent: 'center'
+      alignContent: 'center',
+      variant: 'stack'
     }
   }
 }
@@ -492,7 +493,7 @@ const app = {
       initial: 'main_tabls_id1',
       justifyContent: 'center',
       alignContent: 'center',
-      position: 'bottom'
+      variant: 'tabs'
     }
   }
 }
