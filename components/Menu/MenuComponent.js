@@ -3,6 +3,7 @@ import React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { SafeAreaView } from 'react-native';
@@ -20,11 +21,11 @@ export const options = {
   "type": "object",
   "version": 0.1,
   "properties": {
-    "select": {
-      "title": "Select",
-      "description": "Shows selected rows highlighted",
-      "type": "boolean",
-      "default": false
+    "variant": {
+      "title": "Variant",
+      "description": "Menu variant",
+      "type": "string",
+      "enum": ["stack", "tabs-top", "tabs-bellow", "tabs"],
     },
   },
   "required": []
@@ -103,11 +104,13 @@ class TabMenuComponent extends structs.ListBase.ListBase {
       console.error('MenuComponent: navigation was not receaved through props for ' + props.id)
     }
     super(props);
-    if (props.config.options.position === 'top') {
+    if (props.config.options.position === 'tabs-top') {
       this.Tab = createMaterialTopTabNavigator();
-    } else if (props.config.options.position === 'bottom') {
+    } else if (props.config.options.position === 'tabs-bottom') {
+      this.Tab = createMaterialBottomTabNavigator();
+    } else if (props.config.options.position === 'tabs') {
       this.Tab = createBottomTabNavigator();
-    } else {
+    } else { // stack
       this.Tab = createStackNavigator();
     }
     this.navigation = props.navigation;
