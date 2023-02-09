@@ -130,7 +130,6 @@ class TextComponent extends structs.ListBase.ListBase {
         {this.state.data.map((itm, idx) => {
           const typography = this.configs[itm.typography] || 'c2';
           const text = this.getText(itm);
-          console.info(text)
           return (
             <Text key={itm.id} category={typography.category} style={{ color: 'black' }}>
               {text}

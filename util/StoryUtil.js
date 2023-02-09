@@ -33,7 +33,6 @@ export const registerStoryWatchList = (
             print: {
                 schema: {},
                 handler: (obj) => {
-                    console.info(obj)
                     action(obj.event)(obj)
                 }
             }
