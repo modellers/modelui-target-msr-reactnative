@@ -29,3 +29,9 @@ Running these commands
    4. eas build -p ios --profile preview  # for ios simulator
    5. (specify bundle identifier)
    6. wait for queue
+
+
+### Local builds
+
+Follow these instructions https://docs.expo.dev/archive/classic-updates/turtle-cli/
+
