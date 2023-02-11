@@ -10,7 +10,7 @@ import { registerButton } from './Button/Button';
 import { registerList, registerDropdown } from './List/List';
 import { registerCheckbox, registerTextfield } from './Input/Input';
 import { registerCard } from './Card/Card';
-import { registerTabMenu } from './Menu/Menu';
+import { registerMenu } from './Menu/Menu';
 
 export default function registerComponents(component_manager) {
 
@@ -36,5 +36,5 @@ export default function registerComponents(component_manager) {
     registerCheckbox(component_manager);
     registerTextfield(component_manager);
     registerCard(component_manager);
-    registerTabMenu(component_manager);
+    registerMenu(component_manager);
 }

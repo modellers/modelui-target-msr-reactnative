@@ -7,7 +7,7 @@ export function TabMenu(props) {
     return (<MenuComponent {...props} />);
 }
 
-export function registerTabMenu(component_manager) {
+export function registerMenu(component_manager) {
     // self register component to layout manager
     component_manager.registerComponent({
         component: TabMenu,
