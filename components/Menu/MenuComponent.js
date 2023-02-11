@@ -25,7 +25,7 @@ export const options = {
       "title": "Variant",
       "description": "Menu variant",
       "type": "string",
-      "enum": ["stack", "tabs-top", "tabs-bellow", "tabs"],
+      "enum": ["stack", "top", "bottom", "tabs"],
     },
   },
   "required": []
@@ -51,8 +51,12 @@ export const item = {
       "type": "string",
       "default": "Option"
     },
-    "subtitle": {
-      "description": "Sub title",
+    "icon": {
+      "description": "Icon",
+      "type": "string"
+    },
+    "description": {
+      "description": "Description",
       "type": "string",
       "default": ""
     }
@@ -61,7 +65,7 @@ export const item = {
 }
 
 export const config = {
-  name: "TabMenu",
+  name: "Menu",
   type: "menu",
   author: "Kjartan Jónsson",
   description: "Menu component",
@@ -104,9 +108,10 @@ class MenuComponent extends structs.ListBase.ListBase {
       console.error('MenuComponent: navigation was not receaved through props for ' + props.id)
     }
     super(props);
-    if (props.config.options.variant === 'tabs-top') {
+    // TODO: add left and right, left-slide, right-slide
+    if (props.config.options.variant === 'top') {
       this.MenuView = createMaterialTopTabNavigator();
-    } else if (props.config.options.variant === 'tabs-bottom') {
+    } else if (props.config.options.variant === 'bottom') {
       this.MenuView = createMaterialBottomTabNavigator();
     } else if (props.config.options.variant === 'tabs') {
       this.MenuView = createBottomTabNavigator();

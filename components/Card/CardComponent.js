@@ -180,7 +180,7 @@ function CardComponentRender(card_id, item, classes, view, component_id) {
     if (item.media) {
       content.push(<CardComponentMedia id={id + "media"} key={id + "media"} classes={classes.media} data={data} />)
     }
-    // no bellow
+    // no bottom
     if (item.type === 'content') {
       content.push(<CardComponentContent id={id} key={id} classes={classes} data={data} pick={item.pick} override={item.data} layout={item.layout} view={item.view} />)
     }

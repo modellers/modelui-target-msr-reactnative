@@ -401,7 +401,7 @@ const subtabs = {
     options: {
       justifyContent: 'center',
       alignContent: 'center',
-      variant: 'tabs-top'
+      variant: 'top'
     }
   }
 }
